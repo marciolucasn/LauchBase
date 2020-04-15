@@ -1,3 +1,5 @@
+//Desafio 1-2 - Construção e impressão de objetos
+
 const empresa = {
     nome: "Rocketseat",
     cor: "Roxo",

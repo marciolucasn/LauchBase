@@ -6,13 +6,6 @@ const user = {
   balance: 0
 }
 
-/* 
-const transaction = {
-  type,
-  value
-}
-*/
-
 function createTransaction(transaction) {
   user.transactions.push(transaction)
 

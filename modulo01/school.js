@@ -1,3 +1,5 @@
+ //Aplicação para determinar aprovação de alunos
+ 
  const alunosTurmaA = [
      {
          nome: "Márcio",
