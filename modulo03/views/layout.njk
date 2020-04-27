@@ -1,0 +1,30 @@
+<!-- Desafio do modulo 03 - lauchbase -->
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+            <title>Desafio 03 | Rocketseat</title>
+        {% endblock %}
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Sobre</a>
+                <a href="/courses">Cursos</a>
+                <a href="https://discordapp.com/invite/gCRAFhc" target="_blank">Comunidade</a>
+                <a href="mailto:oi@rocketseat.com.br">E-mail</a>
+                <a href="tel:+5547992078767">Telefone</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <script src="scripts.js"></script>
+    </body>
+
+</html>
