@@ -7,24 +7,24 @@
 
 {% block content %}
     <div id="wrapper">
-        <img src="logoRocketseat.jpg" alt="Rocketseat">
+        <img src="{{data_about.logo}}" alt="Logo {{data_about.name}}">
 
         <div id="content">
-            <h1>Rocketseat</h1>
-            <h2>A menor distância entre você e seus objetivos como programador.</h2>
+            <h1>{{data_about.name}}</h1>
+            <h2>{{data_about.description}}</h2>
             <h3>Tecnologias:</h3>
             <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>NodeJS</li>
-                <li>React</li>
+
+                {% for techs in data_about.technologies %}
+                <li>{{techs.name}}</li>
+                {% endfor %}
+
             </ul>
 
             <div id="links-footer" class="links">
-                <a href="https://github.com/Rocketseat" target="_blank">GitHub</a>
-                <a href="https://www.instagram.com/rocketseat_oficial/" target="_blank">Instagram</a>
-                <a href="https://www.facebook.com/rocketseat" target="_blank">Facebook</a>
+                {% for link in data_about.links %}
+                <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+                {% endfor %}
             </div>
 
         </div>

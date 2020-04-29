@@ -2,21 +2,49 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 
 const server = express()
+const courses = require('./data')
 
 server.use(express.static('public'))
 
 server.set("view engine", "njk")
 
 nunjucks.configure("views", {
-    express: server
+    express: server,
+    autoescape: false
 })
 
 server.get("/", function (req, res) {
-    return res.render("about")
+    const data_about = {
+        name: "Rocketseat",
+        logo: "logoRocketseat.jpg",
+        description: "A menor distância entre você e seus objetivos como programador.",
+        technologies: [
+            { name: "HTML" },
+            { name: "CSS" },
+            { name: "JavaScript" },
+            { name: "NodeJS" },
+            { name: "React" }
+        ],
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/Rocketseat"
+            },
+            {
+                name: "Instagram",
+                url: "https://www.instagram.com/rocketseat_oficial/"
+            },
+            {
+                name: "Facebook",
+                url: "https://www.facebook.com/rocketseat"
+            }
+        ]
+    }
+    return res.render("about", {data_about})
 })
 
 server.get("/courses", function (req, res) {
-    return res.render("courses")
+    return res.render("courses", {courses})
 })
 
 server.use(function (req, res) {

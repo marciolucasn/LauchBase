@@ -11,32 +11,17 @@
 
     <section class="cards">
 
-        <div class="card" id="starter">
-            <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter">
-            <h2>Starter</h2>
-            <div class="card_info">
-                <p>5 módulos</p>
-                <p class="card_price">GRÁTIS</p>
+        {% for course in courses %}
+            <div class="card" id="{{course.name}}">
+                <img src="{{course.img_logo}}" alt="Logo {{course.name}}">
+                <h2>{{course.name}}</h2>
+                <div class="card_info">
+                    <p>{{course.module_num}}</p>
+                    <p class="card_price">{{course.price}}</p>
+                </div>
             </div>
-        </div>
+        {% endfor %}
 
-        <div class="card" id="launchbase">
-            <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="Lauchbase">
-            <h2>Lauchbase</h2>
-            <div class="card_info">
-                <p>14 módulos</p>
-                <p class="card_price">PAGO</p>
-            </div>
-        </div>
-
-        <div class="card" id="gostack">
-            <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="GoStack">
-            <h2>GoStack</h2>
-            <div class="card_info">
-                <p>17 módulos</p>
-                <p class="card_price">PAGO</p>
-            </div>
-        </div>
     </section>
 
     <div class="modal-overlay">
